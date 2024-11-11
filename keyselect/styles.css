@@ -1,0 +1,101 @@
+/* 基本設定 */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 1em;
+}
+
+.collapsible-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* フォームグループのラップ */
+.form-group {
+    display: flex;
+    flex-wrap: wrap; /* 横に並べ、画面幅に合わせて折り返す */
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-start; /* 上部に揃えて並べる */
+}
+
+/* 各フォームカードのスタイル */
+.form-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd; /* 境界線の追加 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    width: calc(33.33% - 40px); /* 3列に並べるための幅設定 */
+    min-width: 220px; /* 最小幅の設定 */
+    max-width: 300px; /* 最大幅の設定 */
+    text-align: left;
+    transition: transform 0.2s; /* ホバーエフェクト */
+}
+
+.form-card:hover {
+    transform: scale(1.02); /* ホバー時に少し拡大 */
+}
+
+.form-card h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* ラベルと入力スタイル */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #6a5acd;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s; /* トランジションにスケール追加 */
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+/* 結果の表示エリア */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* オーディオプレーヤー */
+audio {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+}
