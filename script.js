@@ -20440,8 +20440,8 @@ const audioFileMap = {
     }
 };
 const BaudioFileMap = {
-    '４ビート': '0_0_0_0_0_0_0_0_0.wav',
-    '８ビート': 'tes',
+    '４ビート': 'tes',
+    '８ビート': '../bansou/8bi-to.wav',
     '１６ビート': 'tes',
     'シャッフル': 'tes',
     '４ビート（裏打ち）': 'tes',
@@ -20501,6 +20501,16 @@ function playstop(){
     audioPlayer2.pause();
 }
 
+// 選択したラジオボタンの値をh2に表示する関数
+function updateHeadingText(formId, headingElement) {
+    const form = document.getElementById(formId);
+    const selectedOption = form.querySelector('input[type="radio"]:checked');
+    if (selectedOption) {
+        headingElement.textContent = headingElement.dataset.baseText + " ・ " + selectedOption.value;
+    }
+}
+
+// 折りたたみ機能と選択の変更時に呼び出される関数
 function toggleCollapse(element) {
     const content = element.nextElementSibling;
     if (content.style.display === "none" || content.style.display === "") {
@@ -20511,3 +20521,10 @@ function toggleCollapse(element) {
         element.textContent = element.textContent.replace("▲", "▼");
     }
 }
+
+// 各フォームにイベントリスナーを追加してラジオボタン選択時に呼び出す
+document.querySelectorAll('.form-card').forEach(form => {
+    const headingElement = form.querySelector('h2');
+    headingElement.dataset.baseText = headingElement.textContent; // 基本の見出しテキストを保存
+    form.addEventListener('change', () => updateHeadingText(form.id, headingElement));
+});
