@@ -26343,9 +26343,9 @@ const audioFileMap = {
 
 const BaudioFileMap = {
     '４ビート': 'tes',
-    '８ビート': '../bansou/8bi-to.wav',
-    '１６ビート': 'tes',
-    'シャッフル': 'tes',
+    '８ビート': '8bi-to.mp3',
+    '１６ビート': '16bi-to.mp3',
+    'シャッフル': 'syahhuru.mp3',
     '４ビート（裏打ち）': 'tes',
     '８ビート（裏打ち）': 'tes',
     '１６ビート（裏打ち）': 'tes',
