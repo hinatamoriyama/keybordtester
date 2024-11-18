@@ -17559,7 +17559,7 @@ const audioFileMap = {
         }
     },
     "それ以上": {
-       
+
         "なし": {
             "少な目": {
                 "少な目": {
@@ -26337,7 +26337,7 @@ const audioFileMap = {
 
             }
         }
-    
+
     }
 };
 
@@ -26389,12 +26389,27 @@ function playSelectedFile() {
         const audioPlayer2 = document.getElementById('audioPlayer2');
         audioPlayer1.src = selectedFile;
         audioPlayer2.src = BselectedFile;
-        audioPlayer1.play();
-        audioPlayer2.play();
+
+        // 両方の音声ファイルが読み込まれるまで待機
+        Promise.all([
+            new Promise((resolve) => {
+                audioPlayer1.addEventListener('loadeddata', resolve, { once: true });
+            }),
+            new Promise((resolve) => {
+                audioPlayer2.addEventListener('loadeddata', resolve, { once: true });
+            })
+        ]).then(() => {
+            // 両方の読み込みが完了したら再生
+            audioPlayer1.play();
+            audioPlayer2.play();
+        }).catch(() => {
+            alert("音声ファイルの読み込み中にエラーが発生しました。");
+        });
     } else {
         alert("該当するファイルが見つかりません。");
     }
 }
+
 
 function playstop() {
     const audioPlayer1 = document.getElementById('audioPlayer1');
