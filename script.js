@@ -26387,6 +26387,12 @@ function playSelectedFile() {
         audioPlayer1.src = selectedFile;
         audioPlayer2.src = BselectedFile;
 
+
+        // 音量の初期値を設定
+        audioPlayer1.volume = 1.0; // 0.0 (ミュート) ~ 1.0 (最大音量)
+        audioPlayer2.volume = 0.4;
+
+
         // 両方の音声ファイルが読み込まれるまで待機
         Promise.all([
             new Promise((resolve) => {
@@ -26442,3 +26448,14 @@ document.querySelectorAll('.form-card').forEach(form => {
     headingElement.dataset.baseText = headingElement.textContent; // 基本の見出しテキストを保存
     form.addEventListener('change', () => updateHeadingText(form.id, headingElement));
 });
+
+function changeloop(Button){
+    const audioPlayer1 = document.getElementById('audioPlayer1');
+    const audioPlayer2 = document.getElementById('audioPlayer2');
+
+    audioPlayer1.loop=!audioPlayer1.loop;
+    audioPlayer2.loop=!audioPlayer2.loop;
+    
+    Button.textContent = Button.textContent==="ループ無効"?"ループ有効":"ループ無効";
+    
+}
