@@ -26494,7 +26494,7 @@ function applyPreset(presetValues) {
             const form = input.closest('form'); // 対応するform要素を取得
             const h2 = form.querySelector('h2'); // form内のh2要素を取得
             if (h2) {
-                h2.textContent = h2.textContent.split("：")[0] + `：${value}`; // h2要素のテキストを更新
+                h2.textContent = h2.textContent.split("・")[0] + `・${value}`;
             }
         }
     }
