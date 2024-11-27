@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP3ファイル選択と再生</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <h1>バッキングパターンの要素</h1>
-<div class="form-group">
-    <!-- 各フォームの選択肢 -->
-    <form id="form1" class="form-card" >
-        <h2 onclick="toggleCollapse(this)">音域（範囲）▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="range" value="一オクターブ以内"> 一オクターブ以内</label><br>
-        <label><input type="radio" name="range" value="二オクターブ以内"> 二オクターブ以内</label><br>
-        <label><input type="radio" name="range" value="それ以上"> それ以上</label>
-        </div>
-    </form>
+    <div class="form-group">
+        <!-- 各フォームの選択肢 -->
+        <form id="form1" class="form-card">
+            <h2 onclick="toggleCollapse(this)">音域（範囲）▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="range" value="一オクターブ以内"> 一オクターブ以内</label><br>
+                <label><input type="radio" name="range" value="二オクターブ以内"> 二オクターブ以内</label><br>
+                <label><input type="radio" name="range" value="それ以上"> それ以上</label>
+            </div>
+        </form>
 
-    <form id="form2" class="form-card">
-        <h2 onclick="toggleCollapse(this)">跳躍ありなし▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="jump" value="なし"> なし</label><br>
-        <label><input type="radio" name="jump" value="あり"> あり</label>
-        </div>
-    </form>
+        <form id="form2" class="form-card">
+            <h2 onclick="toggleCollapse(this)">跳躍ありなし▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="jump" value="なし"> なし</label><br>
+                <label><input type="radio" name="jump" value="あり"> あり</label>
+            </div>
+        </form>
 
-    <form id="form3" class="form-card">
-        <h2 onclick="toggleCollapse(this)">音数（時間軸）▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="timing" value="少な目"> 少な目</label><br>
-        <label><input type="radio" name="timing" value="普通"> 普通</label><br>
-        <label><input type="radio" name="timing" value="多め"> 多め</label>
-        </div>
-    </form>
+        <form id="form3" class="form-card">
+            <h2 onclick="toggleCollapse(this)">音数（時間軸）▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="timing" value="少な目"> 少な目</label><br>
+                <label><input type="radio" name="timing" value="普通"> 普通</label><br>
+                <label><input type="radio" name="timing" value="多め"> 多め</label>
+            </div>
+        </form>
 
-    <form id="form4" class="form-card">
-        <h2 onclick="toggleCollapse(this)">音数（同時発音数）▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="simulCount" value="少な目"> 少な目</label><br>
-        <label><input type="radio" name="simulCount" value="普通"> 普通</label><br>
-        <label><input type="radio" name="simulCount" value="多め"> 多め</label>
-        </div>
-    </form>
+        <form id="form4" class="form-card">
+            <h2 onclick="toggleCollapse(this)">音数（同時発音数）▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="simulCount" value="少な目"> 少な目</label><br>
+                <label><input type="radio" name="simulCount" value="普通"> 普通</label><br>
+                <label><input type="radio" name="simulCount" value="多め"> 多め</label>
+            </div>
+        </form>
 
-    <form id="form5" class="form-card">
-        <h2 onclick="toggleCollapse(this)">和音▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="chord" value="三和音"> 三和音</label><br>
-        <label><input type="radio" name="chord" value="四和音"> 四和音</label>
-        </div>
-    </form>
+        <form id="form5" class="form-card">
+            <h2 onclick="toggleCollapse(this)">和音▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="chord" value="三和音"> 三和音</label><br>
+                <label><input type="radio" name="chord" value="四和音"> 四和音</label>
+            </div>
+        </form>
 
-    <form id="form6" class="form-card">
-        <h2 onclick="toggleCollapse(this)">リズム▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="rhythm" value="４ビート"> ４ビート</label><br>
-        <label><input type="radio" name="rhythm" value="８ビート"> ８ビート</label><br>
-        <label><input type="radio" name="rhythm" value="１６ビート"> １６ビート</label><br>
-        <label><input type="radio" name="rhythm" value="シャッフル"> シャッフル</label><br>
-        <label><input type="radio" name="rhythm" value="４ビート（裏打ち）"> ４ビート（裏打ち）</label><br>
-        <label><input type="radio" name="rhythm" value="８ビート（裏打ち）"> ８ビート（裏打ち）</label><br>
-        <label><input type="radio" name="rhythm" value="１６ビート（裏打ち）"> １６ビート（裏打ち）</label><br>
-        <label><input type="radio" name="rhythm" value="シャッフル（裏打ち）"> シャッフル（裏打ち）</label>
-        </div>
-    </form>
+        <form id="form6" class="form-card">
+            <h2 onclick="toggleCollapse(this)">リズム▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="rhythm" value="４ビート"> ４ビート</label><br>
+                <label><input type="radio" name="rhythm" value="８ビート"> ８ビート</label><br>
+                <label><input type="radio" name="rhythm" value="１６ビート"> １６ビート</label><br>
+                <label><input type="radio" name="rhythm" value="シャッフル"> シャッフル</label><br>
+                <label><input type="radio" name="rhythm" value="４ビート（裏打ち）"> ４ビート（裏打ち）</label><br>
+                <label><input type="radio" name="rhythm" value="８ビート（裏打ち）"> ８ビート（裏打ち）</label><br>
+                <label><input type="radio" name="rhythm" value="１６ビート（裏打ち）"> １６ビート（裏打ち）</label><br>
+                <label><input type="radio" name="rhythm" value="シャッフル（裏打ち）"> シャッフル（裏打ち）</label>
+            </div>
+        </form>
 
-    <form id="form7" class="form-card">
-        <h2 onclick="toggleCollapse(this)">刻みかアクセント▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="accent" value="アクセント"> アクセント</label><br>
-        <label><input type="radio" name="accent" value="刻み"> 刻み</label>
-        </div>
-    </form>
+        <form id="form7" class="form-card">
+            <h2 onclick="toggleCollapse(this)">刻みかアクセント▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="accent" value="アクセント"> アクセント</label><br>
+                <label><input type="radio" name="accent" value="刻み"> 刻み</label>
+            </div>
+        </form>
 
-    <form id="form8" class="form-card">
-        <h2 onclick="toggleCollapse(this)">手▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="hand" value="片手"> 片手</label><br>
-        <label><input type="radio" name="hand" value="両手"> 両手</label>
-        </div>
-    </form>
+        <form id="form8" class="form-card">
+            <h2 onclick="toggleCollapse(this)">手▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="hand" value="片手"> 片手</label><br>
+                <label><input type="radio" name="hand" value="両手"> 両手</label>
+            </div>
+        </form>
 
-    <form id="form9" class="form-card">
-        <h2 onclick="toggleCollapse(this)">音色▼</h2>
-        <div class="collapsible-content">
-        <label><input type="radio" name="tone" value="オルガン"> オルガン</label><br>
-        <label><input type="radio" name="tone" value="ピアノ"> ピアノ</label><br>
-        <label><input type="radio" name="tone" value="ストリング"> ストリング</label><br>
-        <label><input type="radio" name="tone" value="エレピ"> エレピ</label>
-        </div>
-    </form>
-</div>
+        <form id="form9" class="form-card">
+            <h2 onclick="toggleCollapse(this)">音色▼</h2>
+            <div class="collapsible-content">
+                <label><input type="radio" name="tone" value="オルガン"> オルガン</label><br>
+                <label><input type="radio" name="tone" value="ピアノ"> ピアノ</label><br>
+                <label><input type="radio" name="tone" value="ストリング"> ストリング</label><br>
+                <label><input type="radio" name="tone" value="エレピ"> エレピ</label>
+            </div>
+        </form>
+    </div>
 
     <button onclick="playSelectedFile()">再生</button>
     <button onclick="playstop()">停止</button>
@@ -104,7 +106,14 @@
 
     <button onclick="changeloop(this)">ループ無効</button>
 
+    <div class="preset">
+        <h1>オススメプリセット</h1>
+        <button onclick="applyPreset(preset1)">簡単ストリング</button>
+        <button onclick="applyPreset(preset2)">刻みオルガン</button>
+    </div>
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
