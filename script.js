@@ -26349,6 +26349,30 @@ const BaudioFileMap = {
     'シャッフル（裏打ち）': 'tes',
 };
 
+const preset1={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "少な目",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "アクセント",
+    hand: "片手",
+    tone: "ストリング"
+};
+
+const preset2={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "普通",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "刻み",
+    hand: "片手",
+    tone: "オルガン"
+};
+
 // 再生機能
 function playSelectedFile() {
     const formValues = [
@@ -26459,3 +26483,20 @@ function changeloop(Button){
     Button.textContent = Button.textContent==="ループ無効"?"ループ有効":"ループ無効";
     
 }
+
+function applyPreset(presetValues) {
+    for (const [name, value] of Object.entries(presetValues)) {
+        const input = document.querySelector(`input[name="${name}"][value="${value}"]`);
+        if (input) {
+            input.checked = true; // ラジオボタンを選択
+
+            // 対応するh2要素を更新
+            const form = input.closest('form'); // 対応するform要素を取得
+            const h2 = form.querySelector('h2'); // form内のh2要素を取得
+            if (h2) {
+                h2.textContent = h2.textContent.split("・")[0] + `・${value}`;
+            }
+        }
+    }
+}
+
