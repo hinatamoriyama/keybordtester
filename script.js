@@ -68,7 +68,7 @@ const audioFileMap = {
                         "１６ビート": {
                             "アクセント": {
                                 "片手": {
-                                    'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
+                                    'オルガン': '000002100.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
@@ -76,7 +76,7 @@ const audioFileMap = {
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
-                                    'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
+                                    'ストリング': '000002112.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 }
                             },
@@ -1529,8 +1529,8 @@ const audioFileMap = {
                         "１６ビート": {
                             "アクセント": {
                                 "片手": {
-                                    'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
-                                    'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
+                                    'オルガン': '', // ファイルパスを指定
+                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 },
@@ -1550,7 +1550,7 @@ const audioFileMap = {
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
-                                    'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
+                                    'ピアノ': '001002111.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 }
@@ -10314,7 +10314,7 @@ const audioFileMap = {
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 },
                                 "両手": {
-                                    'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
+                                    'オルガン': '102102010.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
@@ -10797,7 +10797,7 @@ const audioFileMap = {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
-                                    'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
+                                    'エレピ': '001002111.mp3' // ファイルパスを指定
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
@@ -10814,8 +10814,8 @@ const audioFileMap = {
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 },
                                 "両手": {
-                                    'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
-                                    'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
+                                    'オルガン': '101102110.mp3', // ファイルパスを指定
+                                    'ピアノ': '101102111.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 }
@@ -16667,7 +16667,7 @@ const audioFileMap = {
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
-                                    'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
+                                    'ピアノ': '112102111.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 }
@@ -26392,8 +26392,8 @@ function playSelectedFile() {
         audioPlayer1.volume = 1.0; // 0.0 (ミュート) ~ 1.0 (最大音量)
         audioPlayer2.volume = 0.4;
 
-
-        // 両方の音声ファイルが読み込まれるまで待機
+        
+       // 両方の音声ファイルが読み込まれるまで待機
         Promise.all([
             new Promise((resolve) => {
                 audioPlayer1.addEventListener('loadeddata', resolve, { once: true });
