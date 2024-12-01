@@ -99,3 +99,46 @@ audio {
     width: 100%;
     max-width: 300px;
 }
+
+
+/* 基本スタイル */
+.preset {
+    display: inline-block; /* 横並びのためのインラインブロック要素に設定 */
+    border: 2px solid #000; /* 黒い枠線 */
+    padding: 20px; /* 内側の余白 */
+    margin: 10px; /* 各要素の間隔 */
+    text-align: center; /* 中央揃え */
+    border-radius: 10px; /* 角丸 */
+    background-color: #f9f9f9; /* 背景色 */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* シャドウで立体感 */
+    width: 300px; /* 固定幅 */
+}
+
+/* ボタンのスタイル */
+.preset button {
+    margin-top: 10px; /* 上部にスペース */
+    padding: 10px 20px; /* 内側の余白 */
+    border: none; /* ボーダーを削除 */
+    background-color: #45a049; /* ボタンの背景色 */
+    color: #fff; /* ボタンの文字色 */
+    border-radius: 5px; /* ボタンの角丸 */
+    cursor: pointer; /* ポインターカーソル */
+    transition: background-color 0.3s ease; /* 背景色の変化にアニメーション */
+}
+
+.preset button:hover {
+    background-color: #45a049; /* ボタンのホバー時の色 */
+}
+
+/* 小さい画面の調整（レスポンシブ） */
+@media (max-width: 768px) {
+    .preset {
+        width: 100%; /* 幅を親コンテナ全体に変更 */
+        margin: 10px 0; /* 上下の余白を追加 */
+    }
+
+    body {
+        flex-direction: column; /* 小さい画面では縦並び */
+        align-items: center; /* 中央揃え */
+    }
+}
