@@ -97,29 +97,32 @@
         </form>
     </div>
 
-　　<div>
-    <button onclick="playSelectedFile()">再生</button>
-    <button onclick="playstop()">停止</button>
+    　　<div>
+        <button onclick="playSelectedFile()">再生</button>
+        <button onclick="playstop()">停止</button>
 
-    <!-- 再生プレーヤー -->
-    <audio id="audioPlayer1" controls></audio>
-    <audio id="audioPlayer2" controls></audio>
+        <!-- 再生プレーヤー -->
+        <audio id="audioPlayer1" controls></audio>
+        <audio id="audioPlayer2" controls></audio>
 
-    <button onclick="changeloop(this)">ループ無効</button>
+        <button onclick="changeloop(this)">ループ無効</button>
     </div>
-
-    <div class="preset">
-        <h1>初心者向けプリセット</h1>
-        <button onclick="applyPreset(preset1)">簡単ストリング</button>
-        <button onclick="applyPreset(preset2)">刻みオルガン</button>
-
+    <div>
+        <div class="preset">
+            <h1>初心者向けプリセット</h1>
+            <button onclick="applyPreset(preset1)">簡単ストリング</button>
+            <button onclick="applyPreset(preset2)">刻みオルガン</button>
+            <button onclick="applyPreset(preset3)">刻みピアノ</button>
+            <button onclick="applyPreset(preset4)">アルペジオエレピ</button>
+        </div>
+        <div class="preset">
+            <h1>中級者向けプリセット</h1>
+            <button onclick="applyPreset(preset5)">簡単ストリング</button>
+            <button onclick="applyPreset(preset6)">刻みオルガン</button>
+            <button onclick="applyPreset(preset7)">簡単ストリング</button>
+            <button onclick="applyPreset(preset8)">刻みオルガン</button>
+        </div>
     </div>
-    <div class="preset">
-        <h1>中級者向けプリセット</h1>
-        <button onclick="applyPreset(preset1)">簡単ストリング</button>
-        <button onclick="applyPreset(preset2)">刻みオルガン</button>
-    </div>
-
     <script src="script.js"></script>
 
 </body>

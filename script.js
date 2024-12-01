@@ -41,7 +41,7 @@ const audioFileMap = {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': '000001002.mp3', // ファイルパスを指定
-                                    'エレピ': '001001003.mp3' // ファイルパスを指定
+                                    'エレピ': 'path/to/file6.mp3' // ファイルパスを指定
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
@@ -1502,7 +1502,7 @@ const audioFileMap = {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
                                     'ピアノ': 'path/to/file6.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
-                                    'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
+                                    'エレピ': '001001003.mp3' // ファイルパスを指定
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
@@ -24060,7 +24060,7 @@ const audioFileMap = {
                                 },
                                 "両手": {
                                     'オルガン': 'path/to/file5.mp3', // ファイルパスを指定
-                                    'ピアノ': '311104011.mp3', // ファイルパスを指定
+                                    'ピアノ': '211104011.mp3', // ファイルパスを指定
                                     'ストリング': 'path/to/file7.mp3', // ファイルパスを指定
                                     'エレピ': 'path/to/file8.mp3' // ファイルパスを指定
                                 }
@@ -26373,6 +26373,77 @@ const preset2={
     tone: "オルガン"
 };
 
+const preset3={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "普通",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "刻み",
+    hand: "片手",
+    tone: "ピアノ"
+};
+
+const preset4={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "普通",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "アクセント",
+    hand: "片手",
+    tone: "エレピ"
+};
+
+const preset5={
+    range: "二オクターブ以内",
+    jump: "あり",
+    timing: "多め",
+    simulCount: "普通",
+    chord: "三和音",
+    rhythm: "１６ビート",
+    accent: "刻み",
+    hand: "両手",
+    tone: "ピアノ"
+};
+
+const preset6={
+    range: "それ以上",
+    jump: "あり",
+    timing: "普通",
+    simulCount: "普通",
+    chord: "三和音",
+    rhythm: "８ビート（裏打ち）",
+    accent: "アクセント",
+    hand: "両手",
+    tone: "ピアノ"
+};
+
+const preset7={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "普通",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "アクセント",
+    hand: "片手",
+    tone: "エレピ"
+};
+
+const preset8={
+    range: "一オクターブ以内",
+    jump: "なし",
+    timing: "普通",
+    simulCount: "少な目",
+    chord: "三和音",
+    rhythm: "８ビート",
+    accent: "アクセント",
+    hand: "片手",
+    tone: "エレピ"
+};
 // 再生機能
 function playSelectedFile() {
     const formValues = [
