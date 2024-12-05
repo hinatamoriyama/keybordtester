@@ -26422,28 +26422,48 @@ const preset6={
 };
 
 const preset7={
-    range: "一オクターブ以内",
+    range: "二オクターブ以内",
     jump: "なし",
-    timing: "普通",
-    simulCount: "少な目",
+    timing: "多め",
+    simulCount: "普通",
     chord: "三和音",
-    rhythm: "８ビート",
+    rhythm: "シャッフル",
     accent: "アクセント",
-    hand: "片手",
-    tone: "エレピ"
+    hand: "両手",
+    tone: "ピアノ"
 };
 
 const preset8={
-    range: "一オクターブ以内",
+    range: "二オクターブ以内",
     jump: "なし",
-    timing: "普通",
-    simulCount: "少な目",
+    timing: "多め",
+    simulCount: "普通",
     chord: "三和音",
-    rhythm: "８ビート",
+    rhythm: "シャッフル",
     accent: "アクセント",
-    hand: "片手",
+    hand: "両手",
     tone: "エレピ"
 };
+//楽譜ファイル取得のための関数（playselectedFileで呼び出し）
+function updateSheetMusicFromSelectedFile(selectedFile) {
+    const sheetMusic = document.getElementById("sheetMusic");
+
+    if (typeof selectedFile === "string") {
+        // ファイル名から拡張子を除去
+        const fileNameWithoutExtension = selectedFile.split('/').pop().split('.').slice(0, -1).join('.');
+
+        // 対応するPNGファイル名を生成
+        const pngFilePath = `${fileNameWithoutExtension}.png`;
+
+        // PNGファイルを表示
+        sheetMusic.src = pngFilePath;
+        sheetMusic.style.display = "block";
+    } else {
+        // ファイルが選択されていない場合は非表示
+        sheetMusic.style.display = "none";
+    }
+}
+
 // 再生機能
 function playSelectedFile() {
     const formValues = [
@@ -26482,6 +26502,7 @@ function playSelectedFile() {
         audioPlayer1.src = selectedFile;
         audioPlayer2.src = BselectedFile;
 
+        updateSheetMusicFromSelectedFile(selectedFile);
 
         // 音量の初期値を設定
         audioPlayer1.volume = 1.0; // 0.0 (ミュート) ~ 1.0 (最大音量)

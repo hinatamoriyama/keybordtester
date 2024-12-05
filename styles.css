@@ -154,3 +154,22 @@ audio {
         width: 100%; /* モバイルではボタン幅を親要素に合わせる */
     }
 }
+
+#sheetMusicContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素を水平方向に中央揃え */
+    justify-content: center; /* 子要素を垂直方向に中央揃え */
+    min-height: 300px; /* 適宜高さを調整 */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* 背景色を設定 */
+}
+
+#sheetMusic {
+    max-width: 90%; /* 画面幅に収まるように調整 */
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 画像に影を追加 */
+}

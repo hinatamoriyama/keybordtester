@@ -63,7 +63,9 @@
                 <label><input type="radio" name="rhythm" value="１６ビート"> １６ビート</label><br>
                 <label><input type="radio" name="rhythm" value="シャッフル"> シャッフル</label><br>
                 <label><input type="radio" name="rhythm" value="８ビート（裏打ち）"> ８ビート（裏打ち）</label><br>
+            </div>
         </form>
+
 
         <form id="form7" class="form-card">
             <h2 onclick="toggleCollapse(this)">刻みかアクセント▼</h2>
@@ -92,6 +94,12 @@
         </form>
     </div>
 
+    <div id="sheetMusicContainer">
+        <h2>楽譜表示</h2>
+        <!-- 楽譜画像を表示する要素 -->
+        <img id="sheetMusic" alt="楽譜は準備中です" style="display: none; max-width: 100%; height: auto; border: 1px solid #ccc;">
+    </div>
+
     　　<div>
         <button onclick="playSelectedFile()">再生</button>
         <button onclick="playstop()">停止</button>
@@ -114,8 +122,8 @@
             <h1>中級者向けプリセット</h1>
             <button onclick="applyPreset(preset5)">ポップピアノ</button>
             <button onclick="applyPreset(preset6)">ポップピアノ２</button>
-            <button onclick="applyPreset(preset7)">簡単ストリング</button>
-            <button onclick="applyPreset(preset8)">刻みオルガン</button>
+            <button onclick="applyPreset(preset7)">跳ねアルペジオピアノ</button>
+            <button onclick="applyPreset(preset8)">跳ねエレぴ</button>
         </div>
     </div>
     <script src="script.js"></script>
